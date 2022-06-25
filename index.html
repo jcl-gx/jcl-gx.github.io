@@ -7,12 +7,12 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Demo page for SeDepTTS： Enhancing  Expressive via Self-attention and Semantic dependency for Text-to-Speech Synthesis</title>
+<title>Demo page for SeDepTTS： Enhancing  Expressive via *** for Text-to-Speech Synthesis</title>
 </head>
 <body>
 
 <h2 align="center"> SeDepTTS： Enhancing  Expressive via Self-attention and Semantic dependency for Text-to-Speech Synthesis</h2>
-<div><b>Abstract:</b> 语义依存...</div>
+<div><b>Abstract:</b> ...</div>
 
 <h4>1. Comparing the naturalness of different systems(FastSpeech2 <b>VS</b> BERT-Dep(RGGN) <b>VS</b> SeDepTTS): </h4>
 <blockquote>
@@ -28,13 +28,26 @@
 <td><audio controls><source src="/demo/test1-gt.wav"></audio></td>
 </tr>
 <tr height="15px"></tr>
+
+<tr><td colspan=4><span>2. test1. 夏季是筹款淡季，原因是不少捐款者往往在度假。(Summer is a low season for fundraising, as many donors tend to be on vacation.)</span></td></tr>
+<tr>
+<td align=center width=200>FastSpeech2</td><td align=center width=200>BERT-Dep(RGGN)</td><td align=center width=200>SeDepTTS</td><td align=center width=200>Ground-truth</td>
+</tr>
+<tr>
+<td><audio controls><source src="/demo/test1-fs2.wav"></audio></td>
+<td><audio controls><source src="/demo/test1-bert-dp.wav"></audio></td>
+<td><audio controls><source src="/demo/test1-our.wav"></audio></td>
+<td><audio controls><source src="/demo/test1-gt.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
 </table>
 </blockquote>
 
-<table>
+
 <h4>2. Comparing the naturalness of different systems(FastSpeech2 <b>VS</b> SAG-Tacotron <b>VS</b> SeDepTTS): </h4>
+<table>
 <blockquote>
-<tr><td colspan=2><span>1.2. 他们肯定失去了其优势地位。</span></td></tr>
+<tr><td colspan=2><span>1.2. 那我就给你亮点真本事吧。(*Then let me show you some real strength.*)</span></td></tr>
 <tr>
 <td align=center width=200>Baseline</td><td align=center width=200>Baseline-prosody</td><td align=center width=200>SAE-Tacotron</td><td align=center width=200>SAG-Tacotron</td><td align=center width=200>Ground-truth</td>
 </tr>

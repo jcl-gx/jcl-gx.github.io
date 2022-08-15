@@ -10,7 +10,7 @@
 <body>
 
 <h2 align="center"> SeDepTTS：Enhancing the Naturalness via Semantic Dependency and Local Convolution for Text-to-Speech Synthesis</h2>
-<div><b>Abstract:</b> Self-attention-based networks have obtained impressive performance in parallel training and global context modeling. However, it is weak in local dependency capturing, especially for data with strong local correlation such as utterance. Therefore, we will mine linguistic information of original text based on a semantic dependency and the semantic relationship between nodes is regarded as prior knowledge to revise the local distribution of self-attention. On the other hand, given the strong correlation between input characters, we introduce a one-dimensional (1-D) convolution neural network (CNN) producing queries and values in the self-attention mechanism for a better fusion of local contextual information. Then, we migrate this variant of the self-attention networks to speech synthesis tasks and propose a non-autoregressive (NAR) neural Text-to-Speech (TTS): SeDepTTS. Experimental results show that our model yields good performance in speech synthesis. Specifically, the proposed method yields significant improvement for the processing of pause, stress, and intonation in speech</div>
+<div><b>Abstract:</b> ...</div>
 
 
 <h4>1. Comparing the naturalness of different systems(FastSpeech2 <b>VS</b> BERT-Dep <b>VS</b> SeDepTTS): </h4>
@@ -128,7 +128,7 @@
 <table>
 <tr><td colspan=4><span>9. 夏季是筹款淡季，原因是不少捐款者往往在度假。(Summer is a low season for fundraising, as many donors tend to be on vacation.)</span></td></tr>
 <tr>
-<td align=center width=200>without SD and text_cnn</td><td align=center width=200>with text_cnn</td><td align=center width=200>with SD and text_cnn</td><td align=center width=200>Ground-truth</td>
+<td align=center width=200>without SDE and LC</td><td align=center width=200>with LC</td><td align=center width=200>with SDE and LC</td><td align=center width=200>Ground-truth</td>
 </tr>
 <tr>
 <td><audio controls><source src="/demo/test1-fs2.wav"></audio></td>
@@ -141,7 +141,7 @@
   
 <tr><td colspan=4><span>10. 被野猪糟蹋得一蹋糊涂的庄稼地。(Fields ravaged by wild boars.)</span></td></tr>
 <tr>
-<td align=center width=200>without SD and text_cnn</td><td align=center width=200>with text_cnn</td><td align=center width=200>with SD and text_cnn</td><td align=center width=200>Ground-truth</td>
+<td align=center width=200>without SDE and LC</td><td align=center width=200>with LC</td><td align=center width=200>with SDE and LC</td><td align=center width=200>Ground-truth</td>
 </tr>
 <tr>
 <td><audio controls><source src="/demo/test1-xr-fs2.wav"></audio></td>
@@ -153,7 +153,7 @@
   
 <tr><td colspan=4><span>11. 其中两本出自古鄂尔多斯人之笔，体现出浓郁的地方文化特色。(Two of them were written by people in Ordos since ancient times, reflecting strong local cultural characteristics.)</span></td></tr>
 <tr>
-<td align=center width=200>without SD and text_cnn</td><td align=center width=200>with text_cnn</td><td align=center width=200>with SD and text_cnn</td><td align=center width=200>Ground-truth</td>
+<td align=center width=200>without SDE and LC</td><td align=center width=200>with LC</td><td align=center width=200>with SDE and LC</td><td align=center width=200>Ground-truth</td>
 </tr>
 <tr>
 <td><audio controls><source src="/demo/test2-xr-fs2.wav"></audio></td>

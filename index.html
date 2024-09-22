@@ -62,6 +62,9 @@ document.write("您是第" + visits + "位访问本专题的！")
   
 <body>
 
+<a href="aaai.html" target="_blank">点击这里在新窗口中打开页面</a>
+
+  
 <h2 align="center"> SSL-VC: One-Shot Voice Conversion Through Self-Supervised Learning.</h2>
   
 <div><b>Abstract:</b>Currently, the prevailing approach in voice conversion (VC) involves separating clearer linguistic information from the source audio and then reconstructing it with the identity of the target speaker. However, existing methods, whether employing in-formation perturbation techniques or carefully designed information bottleneck methods, encounter challenges related to unsatisfactory audio separation effects and insufficient robustness. In this paper, we introduce a VC through the self-supervised learning method (SSL-VC). Firstly, utilizes a self-supervised speech representation (S-SSR) extraction network with decoupling (Decp-SSEN) to disentangle linguistic information from speech. The designed no-linguistic encoder extracts features of pitch and energy from the speech to compensate for the loss of non-linguistic information incurred during the Decp-SSEN disentangling process. This approach allows us to obtain richer linguistic information independent of speaker identity, guaranteeing the robust performance of the model. Secondly, we leverage high-level S-SSR as the intermediate feature, replacing the traditional Mel-spectrogram. Built an end-to-end VC pipeline eliminates the need for a vocoder, enhancing the expression level of intermediate features and reducing the learning difficulty gap

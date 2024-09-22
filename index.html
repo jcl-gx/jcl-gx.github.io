@@ -29,7 +29,7 @@
 <div><b>Abstract:</b>Currently, the prevailing approach in voice conversion (VC) involves separating clearer linguistic information from the source audio and then reconstructing it with the identity of the target speaker. However, existing methods, whether employing in-formation perturbation techniques or carefully designed information bottleneck methods, encounter challenges related to unsatisfactory audio separation effects and insufficient robustness. In this paper, we introduce a VC through the self-supervised learning method (SSL-VC). Firstly, utilizes a self-supervised speech representation (S-SSR) extraction network with decoupling (Decp-SSEN) to disentangle linguistic information from speech. The designed no-linguistic encoder extracts features of pitch and energy from the speech to compensate for the loss of non-linguistic information incurred during the Decp-SSEN disentangling process. This approach allows us to obtain richer linguistic information independent of speaker identity, guaranteeing the robust performance of the model. Secondly, we leverage high-level S-SSR as the intermediate feature, replacing the traditional Mel-spectrogram. Built an end-to-end VC pipeline eliminates the need for a vocoder, enhancing the expression level of intermediate features and reducing the learning difficulty gap
 between real and predicted features. Subjective and objective experiments conducted on both seen and unseen speech corpus demonstrate that SSL-VC achieves high-quality VC and speaker similarity. Moreover, it outperforms state-of-the-art methods in extracting richer linguistic information. Ablation experiments further scrutinize the indispensability of the no-linguistic encoder.</div>
 
-<img src="/tcss/tcss.jpg" alt="architecture" class="center-image" width="300">
+<img src="/tcss/tcss.jpg" alt="architecture" class="center-image" width="900">
 
 <h4>1. One-shot  Voice Conversion of different systems: </h4>
 <blockquote>
@@ -151,7 +151,7 @@ between real and predicted features. Subjective and objective experiments conduc
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><audio controls=""><source src="/tcss/yourtts/s/F_5142_36377_000004_000012.wav" type="audio/wav" />Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left">YourTTS</td>
       <td style="text-align: left"><audio controls=""><source src="/tcss/yourtts/t/F_p253_219.wav" type="audio/wav" />Your browser does not support the audio element.</audio></td>
       <td style="text-align: left"><audio controls=""><source src="/tcss/yourtts/c-our/F_5142_36377_000004_000012-F_p253_219.wav" type="audio/wav" />Your browser does not support the audio element.</audio></td>
     </tr>

@@ -70,7 +70,7 @@ document.write("您是第" + visits + "位访问本专题的！")
 <div><b>Abstract:</b>Currently, the prevailing approach in voice conversion (VC) involves separating clearer linguistic information from the source audio and then reconstructing it with the identity of the target speaker. However, existing methods, whether employing in-formation perturbation techniques or carefully designed information bottleneck methods, encounter challenges related to unsatisfactory audio separation effects and insufficient robustness. In this paper, we introduce a VC through the self-supervised learning method (SSL-VC). Firstly, utilizes a self-supervised speech representation (S-SSR) extraction network with decoupling (Decp-SSEN) to disentangle linguistic information from speech. The designed no-linguistic encoder extracts features of pitch and energy from the speech to compensate for the loss of non-linguistic information incurred during the Decp-SSEN disentangling process. This approach allows us to obtain richer linguistic information independent of speaker identity, guaranteeing the robust performance of the model. Secondly, we leverage high-level S-SSR as the intermediate feature, replacing the traditional Mel-spectrogram. Built an end-to-end VC pipeline eliminates the need for a vocoder, enhancing the expression level of intermediate features and reducing the learning difficulty gap
 between real and predicted features. Subjective and objective experiments conducted on both seen and unseen speech corpus demonstrate that SSL-VC achieves high-quality VC and speaker similarity. Moreover, it outperforms state-of-the-art methods in extracting richer linguistic information. Ablation experiments further scrutinize the indispensability of the no-linguistic encoder.</div>
 
-<h4>1. Comparing the naturalness of different systems(FastSpeech2 <b>VS</b> BERT-Dep <b>VS</b> SeDepTTS): </h4>
+<!-- <h4>1. One-shot  Voice Conversion of different systems: </h4>
 <blockquote>
 <table>
 <tr><td colspan=4><span>1. 夏季是筹款淡季，原因是不少捐款者往往在度假。(Summer is a low season for fundraising, as many donors tend to be on vacation.)</span></td></tr>
@@ -222,7 +222,7 @@ between real and predicted features. Subjective and objective experiments conduc
 
 <tr height="15px"></tr>
 </table>
-</blockquote>
+</blockquote> -->
 
 <h4>4. A case of ablation Studies : </h4>
 <blockquote>

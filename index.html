@@ -62,14 +62,10 @@ document.write("您是第" + visits + "位访问本专题的！")
   
 <body>
 
-<h2 align="center"> SeDepTTS：Enhancing the Naturalness via Semantic Dependency and Local Convolution for Text-to-Speech Synthesis</h2>
+<h2 align="center"> SSL-VC: One-Shot Voice Conversion Through Self-Supervised Learning.</h2>
   
-<div><b>Abstract:</b> Self-attention-based networks have obtained impressive performance in parallel training and global context modeling. However, it is weak in local dependency capturing, especially for data with strong local correlations such as utterances. Therefore, we will mine linguistic information of the
-original text based on a semantic dependency and the semantic relationship between nodes is regarded as prior knowledge to revise the distribution of self-attention. On the other hand,
-given the strong correlation between input characters, we introduce a one-dimensional (1-D) convolution neural network (CNN) producing query(Q) and value(V) in the self-attention
-mechanism for a better fusion of local contextual information. Then, we migrate this variant of the self-attention networks to speech synthesis tasks and propose a non-autoregressive
-(NAR) neural Text-to-Speech (TTS): SeDepTTS. Experimental results show that our model yields good performance in speech synthesis. Specifically, the proposed method yields
-significant improvement for the processing of pause, stress, and intonation in speech.</div>
+<div><b>Abstract:</b>Currently, the prevailing approach in voice conversion (VC) involves separating clearer linguistic information from the source audio and then reconstructing it with the identity of the target speaker. However, existing methods, whether employing in-formation perturbation techniques or carefully designed information bottleneck methods, encounter challenges related to unsatisfactory audio separation effects and insufficient robustness. In this paper, we introduce a VC through the self-supervised learning method (SSL-VC). Firstly, utilizes a self-supervised speech representation (S-SSR) extraction network with decoupling (Decp-SSEN) to disentangle linguistic information from speech. The designed no-linguistic encoder extracts features of pitch and energy from the speech to compensate for the loss of non-linguistic information incurred during the Decp-SSEN disentangling process. This approach allows us to obtain richer linguistic information independent of speaker identity, guaranteeing the robust performance of the model. Secondly, we leverage high-level S-SSR as the intermediate feature, replacing the traditional Mel-spectrogram. Built an end-to-end VC pipeline eliminates the need for a vocoder, enhancing the expression level of intermediate features and reducing the learning difficulty gap
+between real and predicted features. Subjective and objective experiments conducted on both seen and unseen speech corpus demonstrate that SSL-VC achieves high-quality VC and speaker similarity. Moreover, it outperforms state-of-the-art methods in extracting richer linguistic information. Ablation experiments further scrutinize the indispensability of the no-linguistic encoder.</div>
 
 <h4>1. Comparing the naturalness of different systems(FastSpeech2 <b>VS</b> BERT-Dep <b>VS</b> SeDepTTS): </h4>
 <blockquote>

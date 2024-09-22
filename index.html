@@ -8,56 +8,6 @@
 <title>Demo page for SSL-VC: One-Shot Voice Conversion Through Self-Supervised Learning.</title>
 </head>
   
-<!-- <script language=JavaScript>
-<!--
-var caution = false
-function setCookie(name, value, expires, path, domain, secure){
-var curCookie = name + "=" + escape(value) +
-((expires) ? "; expires=" + expires.toGMTString() : "") +
-((path) ? "; path=" + path : "") +
-((domain) ? "; domain=" + domain : "") +
-((secure) ? "; secure" : "")
-if (!caution || (name + "=" + escape(value)).length<= 4000)
-document.cookie = curCookie
-else
-if (confirm("Cookie exceeds 4KB and will be cut!"))
-document.cookie = curCookie
-}
-function getCookie(name) {
-var prefix = name + "="
-var cookieStartIndex = document.cookie.indexOf(prefix)
-if (cookieStartIndex == -1)
-return null
-var cookieEndIndex = document.cookie.indexOf(";", cookieStartIndex+ prefix.length)
-if (cookieEndIndex == -1)
-cookieEndIndex = document.cookie.length
-return unescape(document.cookie.substring(cookieStartIndex +prefix.length, cookieEndIndex))
-}
-function deleteCookie(name, path, domain) {
-if (getCookie(name)) {
-document.cookie = name + "=" +
-((path) ? "; path=" + path : "") +
-((domain) ? "; domain=" + domain : "") +
-"; expires=Thu, 01-Jan-70 00:00:01 GMT"
-}
-}
-function fixDate(date) {
-var base = new Date(0)
-var skew = base.getTime()
-if (skew > 0)
-date.setTime(date.getTime() - skew)
-}
-var now = new Date()
-fixDate(now)
-now.setTime(now.getTime() + 365 * 24 * 60 * 60 * 1000)
-var visits = getCookie("counter")
-if (!visits)
-visits = 1
-else
-visits = parseInt(visits) + 1
-setCookie("counter", visits, now)
-document.write("您是第" + visits + "位访问本专题的！")
-// -->
 </script> 
   
 <body>
@@ -78,8 +28,8 @@ between real and predicted features. Subjective and objective experiments conduc
     <tr>
       <th style="text-align: center">Source</th>
       <th style="text-align: center">Target</th>
-      <th style="text-align: center">Conversion:SSL-VC</th>
-      <th style="text-align: center">Conversion:YourTTS</th>
+      <th style="text-align: center">SSL-VC</th>
+      <th style="text-align: center">YourTTS</th>
     </tr>
   </thead>
   <tbody>
@@ -89,37 +39,22 @@ between real and predicted features. Subjective and objective experiments conduc
       <td style="text-align: left"><audio controls=""><source src="/tcss/yourtts/c-our/F_5142_36377_000004_000012-F_p253_219.wav" type="audio/wav" />Your browser does not support the audio element.</audio></td>
       <td style="text-align: left"><audio controls=""><source src="/tcss/yourtts/c-other/F_5142_36377_000004_000012-F_p253_219.wav" type="audio/wav" />Your browser does not support the audio element.</audio></td>
     </tr>
-<!--     <tr>
-      <td style="text-align: left">without SDE and LC</td>
-      <td style="text-align: left"><audio controls=""><source src="/demo/case-without-sde&lc.wav" type="audio/wav" />Your browser does not support the audio element.</audio></td>
-      <td style="text-align: left"><img src="/demo/without sde&lc.png" width="100%" /></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">with LC</td>
-      <td style="text-align: left"><audio controls=""><source src="/demo/case-with-lc.wav" type="audio/wav" />Your browser does not support the audio element.</audio></td>
-      <td style="text-align: left"><img src="/demo/with lc.png" width="100%" /></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">with SDE and LC</td>
-      <td style="text-align: left"><audio controls=""><source src="/demo/case-with-sde&lc.wav" type="audio/wav" />Your browser does not support the audio element.</audio></td>
-      <td style="text-align: left"><img src="/demo/with sde&lc.png" width="100%" /></td>
-    </tr> -->
   </tbody>
 
   <thead>
     <tr>
       <th style="text-align: center">Source</th>
       <th style="text-align: center">Target</th>
-      <th style="text-align: center">Conversion:SSL-VC</th>
-      <th style="text-align: center">Conversion:yourtts</th>
+      <th style="text-align: center">SSL-VC</th>
+      <th style="text-align: center">yourtts</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="text-align: left"><audio controls=""><source src="/tcss/diffvc/s/1401.wav" type="audio/wav" />Your browser does not support the audio element.</audio></td>
-      <td style="text-align: left"><audio controls=""><source src="/tcss/diff/t/8057.wav" type="audio/wav" />Your browser does not support the audio element.</audio></td>
-      <td style="text-align: left"><audio controls=""><source src="/tcss/yourtts/c-our/1401-8057.wav" type="audio/wav" />Your browser does not support the audio element.</audio></td>
-      <td style="text-align: left"><audio controls=""><source src="/tcss/yourtts/c-other/1401-8057.wav" type="audio/wav" />Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="/tcss/diffv/t/8057.wav" type="audio/wav" />Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="/tcss/diffvc/c-our/1401-8057.wav" type="audio/wav" />Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="/tcss/diffvc/c-other/1401-8057.wav" type="audio/wav" />Your browser does not support the audio element.</audio></td>
     </tr>
   </tbody>
 
@@ -144,8 +79,8 @@ between real and predicted features. Subjective and objective experiments conduc
     <tr>
       <th style="text-align: center">Source</th>
       <th style="text-align: center">Target</th>
-      <th style="text-align: center">Conversion:SSL-VC</th>
-      <th style="text-align: center">Conversion:vqmivc</th>
+      <th style="text-align: center">SSL-VC</th>
+      <th style="text-align: center">vqmivc</th>
     </tr>
   </thead>
   <tbody>
@@ -161,8 +96,8 @@ between real and predicted features. Subjective and objective experiments conduc
     <tr>
       <th style="text-align: center">Source</th>
       <th style="text-align: center">Target</th>
-      <th style="text-align: center">Conversion:SSL-VC</th>
-      <th style="text-align: center">Conversion:Diff-VC</th>
+      <th style="text-align: center">SSL-VC</th>
+      <th style="text-align: center">Diff-VC</th>
     </tr>
   </thead>
   <tbody>
@@ -178,8 +113,8 @@ between real and predicted features. Subjective and objective experiments conduc
     <tr>
       <th style="text-align: center">Source</th>
       <th style="text-align: center">Target</th>
-      <th style="text-align: center">Conversion:SSL-VC</th>
-      <th style="text-align: center">Conversion:Diff-VC</th>
+      <th style="text-align: center">SSL-VC</th>
+      <th style="text-align: center">Diff-VC</th>
     </tr>
   </thead>
   <tbody>
@@ -195,8 +130,8 @@ between real and predicted features. Subjective and objective experiments conduc
     <tr>
       <th style="text-align: center">Source</th>
       <th style="text-align: center">Target</th>
-      <th style="text-align: center">Conversion:SSL-VC</th>
-      <th style="text-align: center">Conversion:Diff-VC</th>
+      <th style="text-align: center">SSL-VC</th>
+      <th style="text-align: center">Diff-VC</th>
     </tr>
   </thead>
   <tbody>

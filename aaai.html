@@ -1,0 +1,264 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Demo page for SeDepTTS： Enhancing  Expressive via *** for Text-to-Speech Synthesis</title>
+</head>
+  
+<script language=JavaScript>
+<!--
+var caution = false
+function setCookie(name, value, expires, path, domain, secure){
+var curCookie = name + "=" + escape(value) +
+((expires) ? "; expires=" + expires.toGMTString() : "") +
+((path) ? "; path=" + path : "") +
+((domain) ? "; domain=" + domain : "") +
+((secure) ? "; secure" : "")
+if (!caution || (name + "=" + escape(value)).length<= 4000)
+document.cookie = curCookie
+else
+if (confirm("Cookie exceeds 4KB and will be cut!"))
+document.cookie = curCookie
+}
+function getCookie(name) {
+var prefix = name + "="
+var cookieStartIndex = document.cookie.indexOf(prefix)
+if (cookieStartIndex == -1)
+return null
+var cookieEndIndex = document.cookie.indexOf(";", cookieStartIndex+ prefix.length)
+if (cookieEndIndex == -1)
+cookieEndIndex = document.cookie.length
+return unescape(document.cookie.substring(cookieStartIndex +prefix.length, cookieEndIndex))
+}
+function deleteCookie(name, path, domain) {
+if (getCookie(name)) {
+document.cookie = name + "=" +
+((path) ? "; path=" + path : "") +
+((domain) ? "; domain=" + domain : "") +
+"; expires=Thu, 01-Jan-70 00:00:01 GMT"
+}
+}
+function fixDate(date) {
+var base = new Date(0)
+var skew = base.getTime()
+if (skew > 0)
+date.setTime(date.getTime() - skew)
+}
+var now = new Date()
+fixDate(now)
+now.setTime(now.getTime() + 365 * 24 * 60 * 60 * 1000)
+var visits = getCookie("counter")
+if (!visits)
+visits = 1
+else
+visits = parseInt(visits) + 1
+setCookie("counter", visits, now)
+document.write("您是第" + visits + "位访问本专题的！")
+// -->
+</script>
+  
+<body>
+
+<h2 align="center"> SeDepTTS：Enhancing the Naturalness via Semantic Dependency and Local Convolution for Text-to-Speech Synthesis</h2>
+  
+<div><b>Abstract:</b> Self-attention-based networks have obtained impressive performance in parallel training and global context modeling. However, it is weak in local dependency capturing, especially for data with strong local correlations such as utterances. Therefore, we will mine linguistic information of the
+original text based on a semantic dependency and the semantic relationship between nodes is regarded as prior knowledge to revise the distribution of self-attention. On the other hand,
+given the strong correlation between input characters, we introduce a one-dimensional (1-D) convolution neural network (CNN) producing query(Q) and value(V) in the self-attention
+mechanism for a better fusion of local contextual information. Then, we migrate this variant of the self-attention networks to speech synthesis tasks and propose a non-autoregressive
+(NAR) neural Text-to-Speech (TTS): SeDepTTS. Experimental results show that our model yields good performance in speech synthesis. Specifically, the proposed method yields
+significant improvement for the processing of pause, stress, and intonation in speech.</div>
+
+<h4>1. Comparing the naturalness of different systems(FastSpeech2 <b>VS</b> BERT-Dep <b>VS</b> SeDepTTS): </h4>
+<blockquote>
+<table>
+<tr><td colspan=4><span>1. 夏季是筹款淡季，原因是不少捐款者往往在度假。(Summer is a low season for fundraising, as many donors tend to be on vacation.)</span></td></tr>
+<tr>
+<td align=center width=200>FastSpeech2</td><td align=center width=200>BERT-Dep</td><td align=center width=200>SeDepTTS</td><td align=center width=200>Ground-truth</td>
+</tr>
+<tr>
+<td><audio controls><source src="/demo/test1-fs2.wav"></audio></td>
+<td><audio controls><source src="/demo/test1-bert-dp.wav"></audio></td>
+<td><audio controls><source src="/demo/test1-our1.wav"></audio></td>
+<td><audio controls><source src="/demo/test1-gt.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+
+<tr><td colspan=4><span>2. 副首相克莱格同样为王室游艇建造提议泼冷水。(Deputy Prime Minister Clegg also poured cold water on the proposal of building a royal yacht.)</span></td></tr>
+<tr>
+<td align=center width=200>FastSpeech2</td><td align=center width=200>BERT-Dep</td><td align=center width=200>SeDepTTS</td><td align=center width=200>Ground-truth</td>
+</tr>
+<tr>
+<td><audio controls><source src="/demo/test2-fs2.wav"></audio></td>
+<td><audio controls><source src="/demo/test2-bert-dp.wav"></audio></td>
+<td><audio controls><source src="/demo/test2-our2.wav"></audio></td>
+<td><audio controls><source src="/demo/test2-gt.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+  
+<tr><td colspan=4><span>3. 黑化肥发灰会挥发，灰化肥挥发会发黑。(The black fertilizer will volatilize when it turns gray, and the gray fertilizer will turn black when it volatilizes.)</span></td></tr>
+<tr>
+<td align=center width=200>FastSpeech2</td><td align=center width=200>BERT-Dep</td><td align=center width=200>SeDepTTS</td><td align=center width=200>Ground-truth</td>
+</tr>
+<tr>
+<td><audio controls><source src="/demo/test3-fs2.wav"></audio></td>
+<td><audio controls><source src="/demo/test3-bert-dp.wav"></audio></td>
+<td><audio controls><source src="/demo/test3-our.wav"></audio></td>
+<td><audio controls><source src="/demo/test3-gt.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+  
+<tr><td colspan=4><span>4. 姑姑也想过过过过儿过过的生活。(Gugu also had wanted to live the life that Guoer had lived.)</span></td></tr>
+<tr>
+<td align=center width=200>FastSpeech2</td><td align=center width=200>BERT-Dep</td><td align=center width=200>SeDepTTS</td><td align=center width=200>Ground-truth</td>
+</tr>
+<tr>
+<td><audio controls><source src="/demo/test4-fs2.wav"></audio></td>
+<td><audio controls><source src="/demo/test4-bert-dp.wav"></audio></td>
+<td><audio controls><source src="/demo/test4-our.wav"></audio></td>
+<td><audio controls><source src="/demo/test4-gt.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+</table>
+</blockquote>
+
+
+<h4>2. Comparing the naturalness of different systems(FastSpeech2 <b>VS</b> SAG-Tacotron <b>VS</b> SeDepTTS): </h4>
+<blockquote>
+<table>
+<tr><td colspan=4><span>5. 塔河的寒夜，气温降到了零下三十多摄氏度。(The cold night in tahe, the temperature dropped to more than minus thirty degrees Celsius.)</span></td></tr>
+<tr>
+<td align=center width=200>FastSpeech2</td><td align=center width=200>SAG-Tacotron</td><td align=center width=200>SeDepTTS</td><td align=center width=200>Ground-truth</td>
+</tr>
+<tr>
+<td><audio controls><source src="/demo/test5-fs2.wav"></audio></td>
+<td><audio controls><source src="/demo/test5-sag.wav"></audio></td>
+<td><audio controls><source src="/demo/test5-our1.wav"></audio></td>
+<td><audio controls><source src="/demo/test5-gt.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+
+  
+<tr><td colspan=4><span>6.  第二年，生了个大胖小子。(The next year, a big fat boy was born.)</span></td></tr>
+<tr>
+<td align=center width=200>FastSpeech2</td><td align=center width=200>SAG-Tacotron</td><td align=center width=200>SeDepTTS</td><td align=center width=200>Ground-truth</td>
+</tr>
+<tr>
+<td><audio controls><source src="/demo/test6-fs2.wav"></audio></td>
+<td><audio controls><source src="/demo/test6-sag.wav"></audio></td>
+<td><audio controls><source src="/demo/test6-our1.wav"></audio></td>
+<td><audio controls><source src="/demo/test6-gt.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+  
+<tr><td colspan=4><span>7. 他们肯定失去了其优势地位。(They have certainly lost their dominant position.)</span></td></tr>
+<tr>
+<td align=center width=200>FastSpeech2</td><td align=center width=200>SAG-Tacotron</td><td align=center width=200>SeDepTTS</td><td align=center width=200>Ground-truth</td>
+</tr>
+<tr>
+<td><audio controls><source src="/demo/test7-fs2.wav"></audio></td>
+<td><audio controls><source src="/demo/test7-sag.wav"></audio></td>
+<td><audio controls><source src="/demo/test7-our.wav"></audio></td>
+<td><audio controls><source src="/demo/test7-gt.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+  
+<tr><td colspan=4><span>8.  据称，两人当时都有粗口。(Both men allegedly swore at each other.)</span></td></tr>
+<tr>
+<td align=center width=200>FastSpeech2</td><td align=center width=200>SAG-Tacotron</td><td align=center width=200>SeDepTTS</td><td align=center width=200>Ground-truth</td>
+</tr>
+<tr>
+<td><audio controls><source src="/demo/test8-fs2.wav"></audio></td>
+<td><audio controls><source src="/demo/test8-sag.wav"></audio></td>
+<td><audio controls><source src="/demo/test8-our.wav"></audio></td>
+<td><audio controls><source src="/demo/test8-gt.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+
+<tr height="15px"></tr>
+</table>
+</blockquote>
+  
+<h4>3. Ablation Studies : </h4>
+<blockquote>
+<table>
+<tr><td colspan=4><span>9. 夏季是筹款淡季，原因是不少捐款者往往在度假。(Summer is a low season for fundraising, as many donors tend to be on vacation.)</span></td></tr>
+<tr>
+<td align=center width=200>without SDE and LC</td><td align=center width=200>with LC</td><td align=center width=200>with SDE and LC</td><td align=center width=200>Ground-truth</td>
+</tr>
+<tr>
+<td><audio controls><source src="/demo/test1-fs2.wav"></audio></td>
+<td><audio controls><source src="/demo/test1-our-LC.wav"></audio></td>
+<td><audio controls><source src="/demo/test1-our1.wav"></audio></td>
+<td><audio controls><source src="/demo/test1-gt.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+
+  
+<tr><td colspan=4><span>10. 被野猪糟蹋得一蹋糊涂的庄稼地。(Fields ravaged by wild boars.)</span></td></tr>
+<tr>
+<td align=center width=200>without SDE and LC</td><td align=center width=200>with LC</td><td align=center width=200>with SDE and LC</td><td align=center width=200>Ground-truth</td>
+</tr>
+<tr>
+<td><audio controls><source src="/demo/test1-xr-fs2.wav"></audio></td>
+<td><audio controls><source src="/demo/test1-xr-text-cnn.wav"></audio></td>
+<td><audio controls><source src="/demo/test1-xr-our.wav"></audio></td>
+<td><audio controls><source src="/demo/test1-xr-gt.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+  
+<tr><td colspan=4><span>11. 其中两本出自古鄂尔多斯人之笔，体现出浓郁的地方文化特色。(Two of them were written by people in Ordos since ancient times, reflecting strong local cultural characteristics.)</span></td></tr>
+<tr>
+<td align=center width=200>without SDE and LC</td><td align=center width=200>with LC</td><td align=center width=200>with SDE and LC</td><td align=center width=200>Ground-truth</td>
+</tr>
+<tr>
+<td><audio controls><source src="/demo/test2-xr-fs2.wav"></audio></td>
+<td><audio controls><source src="/demo/test2-xr-text-cnn.wav"></audio></td>
+<td><audio controls><source src="/demo/test2-xr-our.wav"></audio></td>
+<td><audio controls><source src="/demo/test2-xr-gt.wav"></audio></td>
+</tr>
+<tr height="15px"></tr>
+
+<tr height="15px"></tr>
+</table>
+</blockquote>
+
+<h4>4. A case of ablation Studies : </h4>
+<blockquote>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Method</th>
+      <th style="text-align: left">Synthesized Speech</th>
+      <th style="text-align: left">Mel-Spectrogram</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Ground truth</td>
+      <td style="text-align: left"><audio controls=""><source src="/demo/case-gt.wav" type="audio/wav" />Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><img src="/demo/gt.png" width="100%" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">without SDE and LC</td>
+      <td style="text-align: left"><audio controls=""><source src="/demo/case-without-sde&lc.wav" type="audio/wav" />Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><img src="/demo/without sde&lc.png" width="100%" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">with LC</td>
+      <td style="text-align: left"><audio controls=""><source src="/demo/case-with-lc.wav" type="audio/wav" />Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><img src="/demo/with lc.png" width="100%" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">with SDE and LC</td>
+      <td style="text-align: left"><audio controls=""><source src="/demo/case-with-sde&lc.wav" type="audio/wav" />Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><img src="/demo/with sde&lc.png" width="100%" /></td>
+    </tr>
+  </tbody>
+</table>
+</blockquote>
+
+</body>
+</html>
